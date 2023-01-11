@@ -1,0 +1,106 @@
+.partNews{
+    background: url("../img/bg_newsletter.jpg") repeat-x center top #a05d38;
+    background-size: contain;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    position: relative;
+    width: 100%;
+    z-index: 997;
+    color: white;
+    padding: 8% 7% 40px 7%;
+    .gun{
+      position: absolute;
+      height: 60%;
+      margin-top: 8%;
+      margin-left: 20px;
+      z-index: -1;
+      opacity: 34%;
+    }
+    .textNews{
+      display: table-cell;
+      grid-column: 1 / 2;
+      h3{
+        text-align: center;
+      }
+      p{
+        text-align: center;
+      }
+    }
+    .remplirNews{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      max-width: 800px;
+      margin: auto;
+      form{
+        display: flex;
+        grid-column: 1 / 3;
+        align-items: center;
+        justify-content: center;
+        input:nth-child(1){
+          margin-right: 10px;
+          height: 50px;
+          border-radius: 10px;
+          width: 80%;
+          padding-left: 12px;
+          max-width: 480px;
+          justify-self: right;
+        }
+        button{
+          @include bouton;
+          span{
+            color: black;
+          }
+          &:hover{
+            .bg-button path:nth-child(1){
+              fill: transparent;
+              stroke: $coulDiscrete;
+            }
+            span{
+              color: $coulDiscrete;
+            }
+          }
+        }
+      }
+      
+      .erreurs{
+        display: table-cell;
+        grid-column: 1 / 3;
+        margin: auto;
+        font-size: 20px;
+        font-family: $fontText;
+        font-weight: bold;
+        color: $coulDiscrete;
+      }
+      p{
+        display: table-cell;
+        grid-column: 1 / 3;
+        font-size: 14px;
+        text-align: center;
+      }
+  
+    }
+    @media screen and (max-width: 960px){
+      .remplirNews{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        margin: auto;
+        width: 100%;
+        form{
+          flex-direction: column;
+        }
+        input:nth-child(1){
+          min-width: 280px;
+          margin-bottom: 10px;
+        }
+        button{
+          display: table-cell;
+          grid-column: 1 / 2;
+          margin: auto;
+        }
+      }
+    }
+  }

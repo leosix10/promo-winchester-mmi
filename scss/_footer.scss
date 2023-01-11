@@ -1,0 +1,128 @@
+#backtotop{
+  position: fixed;
+  right: 2%;
+  bottom: 7%;
+  z-index: 10000;
+  background-color: $coulTonique1;
+  height: 60px;
+  width: 70px;
+  border: black solid 2px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease 0.1s;
+  a{
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease 0.1s;
+  }
+  img{
+    width: 60px;
+  }
+  &:hover{
+    background-color: $coulTonique2;
+  }
+}
+
+
+footer{
+    background: url("../img/bg_footer.jpg") repeat-x center top #dcc792;
+    background-size: contain;
+    padding: 5% 8% 30px 8%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr repeat(2, 2fr) 1fr;
+    grid-gap: 20px;
+    color: $coulTonique1;
+    a{
+      color: #754729;
+      font-family: $fontText;
+      text-decoration: none;
+      transition: all 0.2s ease 0.1s;
+      &:hover{
+        color: $coulDiscrete;
+      }
+    }
+    .basLogo{
+      display: table-cell;
+      grid-column: 1 / 2;
+      img{
+        width: 140px;
+      }
+    }
+    .rgpd{
+      display: table-cell;
+      grid-column: 2 / 3;
+      li{
+        font-family: $fontText;
+        line-height: 1.5;
+        color: #754729;
+      }
+    }
+    .medias{
+      display: table-cell;
+      grid-column: 3 / 4;
+      a{
+        margin-right: 12px;
+        img{
+          width: 60px;
+        }
+      }
+    }
+    .langues{
+      display: table-cell;
+      grid-column: 4 / 5;
+      margin-bottom: 30px;
+      li{
+        margin-bottom: 12px;
+        a{
+          font-size: 20px;
+          img{
+            height: 18px;
+            width: 18px;
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 960px){
+    footer{
+      grid-template-columns: repeat(2, 1fr);
+      .medias{
+        grid-column: 1 / 2;
+      }
+      .langues{
+        grid-column: 2 / 3;
+      }
+    }
+  }
+  @media screen and (max-width: 720px){
+    footer{
+      grid-template-columns: 1fr;
+      .basLogo{
+        display: flex;
+        justify-content: center;
+      }
+      .rgpd{
+        grid-column: 1 / 2;
+        text-align: center;
+        ul{
+          list-style: none;
+        }
+      }
+      .medias{
+        display: grid;
+        div{
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+      .langues{
+        display: flex;
+        justify-content: center;
+        grid-column: 1 / 2;
+      }
+    }
+  }

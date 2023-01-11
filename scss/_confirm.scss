@@ -1,0 +1,70 @@
+/*CONFIRMATION*/
+
+.partConf{
+  display: grid;
+  position: relative;
+  padding: 180px 7% 40px 7%;
+  background-color: $coulAccomp1;
+  margin-top: -30px;
+  button{
+    @include bouton;
+    width: 230px;
+  }
+  h1{
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      margin: 20px;
+      width: 50px;
+    }
+  }
+  .btnA-l-r {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  .confirmation{
+    display: flex;
+    min-height: 480px;
+    padding: 20px;
+    border: 2px solid #000;
+    flex-direction: column;
+    background-color: white;
+    .messConf{
+      div{
+        display: flex;
+        align-items: center;
+        max-width: 840px;
+        margin: auto;
+        p{
+          margin-bottom: 12px;
+          color: #966E17;
+          font-weight: bold;
+        }
+        img{
+          width: 160px;
+          margin: 0 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px){
+  .partConf{
+    h1{
+      img{
+        margin: 8px;
+      }
+    }
+    .confirmation{
+      .messConf{
+        div{
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

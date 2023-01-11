@@ -1,0 +1,329 @@
+.global-regles {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    max-height: 630px;
+    h2{
+      text-align: center;
+    }
+    .parchemin {
+        background: url("../img/bg_parchemin.png") no-repeat center;
+        background-size: contain;
+        min-height: 600px;
+        display: block;
+        grid-column: 1 /2;
+        grid-row: 1 / 3;
+      }
+      .parchemin-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 24px auto;
+        max-height: 10%;
+        max-width: 60%;
+        padding-top: 30%;
+        min-height: 500px;
+        min-width: 250px;
+        p{
+          color: #704e1f;
+          margin-bottom: 20px;
+        }
+        button{
+          @include bouton;
+          width: 230px;
+          height: 76px;
+          span{
+            color: white;
+            width: 210px;
+            font-size: 28px;
+          }
+          &:hover{
+            .bg-button path:nth-child(1){
+              fill: transparent;
+              stroke: #704e1f;
+            }
+            span{
+              color: #704e1f;
+            }
+          }
+        }
+      }
+      .carrousel {
+        -webkit-perspective: 1000px;
+        -moz-perspective: 1000px;
+        width: 100%;
+        height: 70%;
+        display: block;
+        margin: 30px auto;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        transform: translate(25%, 0);
+        overflow-x: unset;
+      }
+      
+      @-webkit-keyframes carrousel {
+        from {
+          -webkit-transform: rotateY(360deg) translateZ(200px) rotateY(-360deg);
+          -moz-transform: rotateY(360deg) translateZ(200px) rotateY(-360deg);
+          z-index: 10;
+          opacity: 1;
+        }
+        50% {
+          z-index: -10;
+        }
+        to {
+          -webkit-transform: rotateY(0deg) translateZ(200px) rotateY(0deg);
+          -moz-transform: rotateY(0deg) translateZ(200px) rotateY(0deg);
+          z-index: 10;
+          opacity: 1;
+        }
+      }
+      
+      @-moz-keyframes carrousel {
+        from {
+          -moz-transform: rotateY(360deg) translateZ(200px) rotateY(-360deg);
+          z-index: 10;
+          opacity: 1;
+        }
+        50% {
+          z-index: -10;
+        }
+        to {
+          -moz-transform: rotateY(0deg) translateZ(200px) rotateY(0deg);
+          z-index: 10;
+          opacity: 1;
+        }
+      }
+      
+      .card {
+        width: 125px;
+        height: 173px;
+        font-size: 40px;
+        opacity: 0;
+        position: absolute;
+        top: 60px;
+        left: 14%;
+        border-radius: 12px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        -webkit-animation-name: carrousel;
+        -moz-animation-name: carrousel;
+        -webkit-animation-duration: 8s;
+        -moz-animation-duration: 8s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+      }
+      
+      .card:hover {
+        border: solid #70c5ca 2px;
+        box-shadow: 0px 0px 10px #70c5ca;
+      }
+      
+      #c7 {
+        background: url("../img/plateau/carte_or.png") no-repeat;
+        background-size: contain;
+      }
+      #c6 {
+        background: url("../img/plateau/carte_holster.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -1s;
+        -moz-animation-delay: -1s;
+      }
+      #c5 {
+        background: url("../img/plateau/carte_dynamite.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -2s;
+        -moz-animation-delay: -2s;
+      }
+      #c4 {
+        background: url("../img/plateau/carte_cowboy.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -3s;
+        -moz-animation-delay: -3s;
+      }
+      #c3 {
+        background: url("../img/plateau/carte_chapeau.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -4s;
+        -moz-animation-delay: -4s;
+      }
+      #c2 {
+        background: url("../img/plateau/carte_bottes.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -5s;
+        -moz-animation-delay: -5s;
+      }
+      #c1 {
+        background: url("../img/plateau/carte_armes.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -6s;
+        -moz-animation-delay: -6s;
+      }
+      #c0 {
+        background: url("../img/plateau/carte_dos.png") no-repeat;
+        background-size: contain;
+        -webkit-animation-delay: -7s;
+        -moz-animation-delay: -7s;
+      }
+
+      .carousel-jeton{
+        display: flex;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        overflow-y: hidden;
+        .owl-item{
+          overflow-y: hidden;
+        }
+        .owl-item > div {
+          cursor: pointer;
+          margin: 6% 8%;
+          transition: margin 0.4s ease;
+        }
+        .owl-item.center > div {
+          cursor: auto;
+          margin: 0;
+        }
+        .owl-item:not(.center) > div:hover {
+          opacity: .75;
+        }
+        
+        .owl-carousel{
+          .owl-item{
+            img{
+              width: 80%;
+            }
+          }
+        }
+      }
+      .owl-loaded{
+        overflow-y: hidden;
+      }
+
+
+
+
+      .lesJetons {
+        display: flex;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-content: space-around;
+      }
+      .jeton {
+        height: 90px;
+        width: 90px;
+        background: url("../img/plateau/jeton_5.png") no-repeat;
+        background-size: contain;
+      }
+      #j1 {
+        background: url("../img/plateau/jeton_1.png") no-repeat;
+        background-size: contain;
+      }
+      #j2 {
+        background: url("../img/plateau/jeton_2.png") no-repeat;
+        background-size: contain;
+      }
+      #j3 {
+        background: url("../img/plateau/jeton_3.png") no-repeat;
+        background-size: contain;
+      }
+      #j4 {
+        background: url("../img/plateau/jeton_4.png") no-repeat;
+        background-size: contain;
+      }
+      #j5 {
+        background: url("../img/plateau/jeton_5.png") no-repeat;
+        background-size: contain;
+      }
+      #j6 {
+        background: url("../img/plateau/jeton_6.png") no-repeat;
+        background-size: contain;
+      }
+      #j7 {
+        background: url("../img/plateau/jeton_bonus.png") no-repeat;
+        background-size: contain;
+      }
+      #j8 {
+        background: url("../img/plateau/jeton_chameau.png") no-repeat;
+        background-size: contain;
+      }
+      #j9 {
+        background: url("../img/plateau/jeton_excel.png") no-repeat;
+        background-size: contain;
+      }
+}
+
+@media screen and (max-width: 960px){
+  .global-regles{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 160px 2fr;
+    grid-gap: 20px;
+    max-height: 2000px;
+    .parchemin{
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+    .carrousel{
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .carousel-jeton{
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+  }
+}
+@media screen and(max-width: 720px){
+  .global-regles{
+    grid-template-rows: 1fr 110px 2fr;
+    h2{
+      text-align: center;
+    }
+  }
+}
+@media screen and(max-width: 480px){
+  .global-regles{
+    grid-template-rows: 1fr 70px 2fr;
+    .card{
+      width: 80px;
+      height: 112px;
+      top: 40px;
+    }
+    @-webkit-keyframes carrousel {
+      from {
+        -webkit-transform: rotateY(360deg) translateZ(120px) rotateY(-360deg);
+        -moz-transform: rotateY(360deg) translateZ(120px) rotateY(-360deg);
+        z-index: 10;
+        opacity: 1;
+      }
+      50% {
+        z-index: -10;
+      }
+      to {
+        -webkit-transform: rotateY(0deg) translateZ(120px) rotateY(0deg);
+        -moz-transform: rotateY(0deg) translateZ(120px) rotateY(0deg);
+        z-index: 10;
+        opacity: 1;
+      }
+    }
+    
+    @-moz-keyframes carrousel {
+      from {
+        -moz-transform: rotateY(360deg) translateZ(200px) rotateY(-360deg);
+        z-index: 10;
+        opacity: 1;
+      }
+      50% {
+        z-index: -10;
+      }
+      to {
+        -moz-transform: rotateY(0deg) translateZ(200px) rotateY(0deg);
+        z-index: 10;
+        opacity: 1;
+      }
+    }
+  }
+}
+  

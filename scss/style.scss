@@ -1,0 +1,123 @@
+/* 1- DEFINIR LE STYLE */
+
+@font-face {
+  font-family: "Grinched";
+  src: url("../GrinchedRegular.otf") format("opentype")
+}
+@font-face {
+  font-family: "Hansief";
+  src: url("../Hansief.otf") format("opentype")
+}
+$coulTonique1: #a05d38;
+$coulTonique2: #dfaa35;
+$coulDiscrete: #70c5ca;
+$coulAccomp1: #727e4b;
+$coulAccomp2: #1a1e3a;
+$fontTitle: "Grinched", sans-serif;
+$fontNav: "Hansief", sans-serif;
+$fontText: "Malgun Gothic", sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5{
+  font-family: $fontTitle;
+  margin: 0 auto 10px auto;
+  letter-spacing: 2px;
+}
+h1{font-size: 66px;}
+h2{font-size: 60px;}
+h3{font-size: 54px;}
+h4{font-size: 48px;}
+h5{font-size: 30px;}
+p, input{
+  font-size: 18px;
+  font-family: $fontText;
+}
+input{
+  &:focus{
+    outline: none;
+  }
+}
+@mixin bouton{
+  position: relative;
+  cursor: pointer;
+  width: 313px;
+  height: 88px;
+  border: none;
+  background-color: transparent;
+  .bg-button path:nth-child(1){
+    transition: all 0.2s ease 0.1s;
+  }
+  span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -30%);
+    color: black;
+    font-family: $fontTitle;
+    font-size: 32px;
+    transition: all 0.2s ease 0.1s;
+    width: 240px;
+    letter-spacing: 2px;
+  }
+  &:hover{
+    .bg-button path:nth-child(1){
+      fill: transparent;
+      stroke: $coulDiscrete;
+    }
+    span{
+      color: $coulDiscrete;
+    }
+  }
+}
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: $coulTonique1 #ebebeb;
+  scrollbar-width: thin;
+}
+html::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+}
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ebebeb;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: $coulTonique1;
+}
+
+/* 2- LE HEADER */
+
+@import 'header';
+
+/* 3- LE FOOTER */
+
+@import 'footer';
+
+/* 4- LE RESTE */
+
+@import 'cookie';
+@import 'accueil';
+@import 'newsletter';
+@import 'plateau';
+@import 'reglesjeu';
+@import 'panier';
+@import 'confirm';
+
+/* 5- RGPD */
+.pageRgpd{
+  padding: 140px 0 40px 0;
+  h2{
+    margin-bottom: 2%;
+    text-align: center;
+    font-family: $fontNav;
+    text-transform: uppercase;
+  }
+  p{
+    margin: 0 15% 20px 15%;
+    font-family: $fontText;
+  }
+}
