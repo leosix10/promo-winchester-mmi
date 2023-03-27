@@ -19,8 +19,8 @@ include "inc/script_contact.php";
     <!--Open Graph (le truc pour les réseaux sociaux)-->
     <meta property="og:title" content="Winchester - site promotionnel du jeu" />
     <meta property="og:type" content="siteweb" />
-    <meta property="og:url" content="http://mmi20c04.mmi-troyes.fr/promo/" />
-    <meta property="og:image" content="http://mmi20c04.mmi-troyes.fr/promo/img/cartes_header.png" />
+    <meta property="og:url" content="http://leosix.fr/promo/" />
+    <meta property="og:image" content="http://leosix.fr/promo/img/cartes_header.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="scss/style.css">
@@ -390,7 +390,7 @@ include "inc/script_contact.php";
     <div class="rgpd">
         <h5>Winchester 2022 - Tous droits reserves.</h5>
         <ul>
-            <li>Design : <a href="http://mmi20c04.mmi-troyes.fr/clickgames/"> ClickGames</a></li>
+            <li>Design : <a href="http://leosix.fr/clickgames/"> ClickGames</a></li>
             <li><a href="rgpd.html">Politique de confidentialité et cookies</a></li>
             <li><a href="">Conditions générales</a></li>
         </ul>
